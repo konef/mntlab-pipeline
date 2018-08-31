@@ -1,9 +1,15 @@
 node  {
+    
+      stage('Creating Jobs') {
+
+        build job: 'DSL script job'
+      }
+    
       stage('Preparation') {
 
         echo "==> Preparation stage begins."
 
-        git branch: 'ikonev', url: 'https://github.com/konef/mntlab-pipeline/tree/ikonev.git'
+        git branch: 'ikonev', url: 'https://github.com/konef/mntlab-pipeline.git'
 
     }
 
@@ -68,7 +74,7 @@ node  {
 
     stage('Asking for manual approval') {
 
-                input message: 'Please, approve to continue.', ok: 'Burn \'em all!!!'
+                input message: 'Go manual approval?', ok: 'Go!'
 
                 echo ('Finished: Asking for manual approval')
 
