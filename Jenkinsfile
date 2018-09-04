@@ -1,4 +1,4 @@
-node  {
+node ('gradle') {
     
       stage('Creating Jobs') {
 
